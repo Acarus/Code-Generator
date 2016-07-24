@@ -18,6 +18,6 @@ public class BlockFactory {
     }
 
     public Block get(String name) {
-        return blocks.get(name).clone();
+        return new Block(blocks.get(name));
     }
 }

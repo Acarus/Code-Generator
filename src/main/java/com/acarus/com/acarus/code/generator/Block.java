@@ -22,6 +22,11 @@ public class Block implements Cloneable {
         this.name = name;
     }
 
+    public Block(Block block) {
+        this(block.getName());
+        setModel(new Model(block.getModel()));
+    }
+
     public String getName() {
         return name;
     }
@@ -78,12 +83,5 @@ public class Block implements Cloneable {
 
     public String getNestedChildOutput(List<Block> nestedChild) {
         return nestedChildOutput.get(nestedChild);
-    }
-
-    @Override
-    public Block clone() {
-        Block block = new Block(name);
-        block.setModel(model.clone());
-        return block;
     }
 }

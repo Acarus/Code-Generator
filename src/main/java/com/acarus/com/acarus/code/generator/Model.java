@@ -9,15 +9,18 @@ public class Model implements Cloneable {
     private Map<String, Object> localModel;
     private Map<String, Object> globalModel;
 
-    public Model() {
-
-    }
+    public Model() {}
 
     public Model(Map<String, Object> localModel, Map<String, Object> globalModel) {
         this.localModel = localModel;
         this.globalModel = globalModel;
     }
 
+    public Model(Model model) {
+        localModel = new HashMap<>();
+        localModel.putAll(model.getLocalModel());
+        globalModel = model.getGlobalModel();
+    }
 
     public Map<String, Object> getLocalModel() {
         return localModel;
@@ -91,12 +94,5 @@ public class Model implements Cloneable {
         return  var.startsWith("_global_") ||
                 var.startsWith("_define_") ||
                 var.startsWith("_const_");
-    }
-
-    @Override
-    public Model clone() {
-        Map<String, Object> localModel = new HashMap<>();
-        localModel.putAll(this.localModel);
-        return new Model(localModel, this.globalModel);
     }
 }
