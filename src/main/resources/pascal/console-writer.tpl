@@ -1,0 +1,1 @@
+writeln(@echo('var.name'));

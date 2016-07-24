@@ -1,0 +1,1 @@
+@echo('function.name')(@foreach('arg <- args') @echo('arg.name') @if('${_isLastElement_} == false') , #end #end)

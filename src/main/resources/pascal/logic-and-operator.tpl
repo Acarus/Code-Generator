@@ -1,0 +1,1 @@
+@echo('left') and @echo('right')

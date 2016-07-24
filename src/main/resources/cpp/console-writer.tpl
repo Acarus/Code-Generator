@@ -1,0 +1,1 @@
+std::cout << @echo('var.name') << std::endl

@@ -1,0 +1,1 @@
+readln(@echo('var.name'));
