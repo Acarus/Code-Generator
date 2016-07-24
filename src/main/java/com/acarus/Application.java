@@ -13,31 +13,7 @@ import java.util.Map;
 
 public class Application {
 
-    public static String compress(String str) {
-        StringBuilder buff = new StringBuilder();
-        Character prev = null;
-        int cnt = 0;
-        for (Character item: str.toCharArray()) {
-            if (item == prev) {
-                cnt++;
-                if (prev != null) {
-                    buff.append(cnt + prev.toString());
-                    prev = item;
-                }
-            } else {
-                prev = item;
-                cnt = 1;
-            }
-        }
-
-        if (cnt > 0 && prev != null) {
-            buff.append(cnt + prev.toString());
-        }
-        return buff.toString();
-    }
-
     public static void main(String[] args) {
-        System.out.println(compress("aabbc"));
         BlockFactory blockFactory = new BlockFactory();
 
         /* -------------- [ global vars, constants ] ---------------------- */
